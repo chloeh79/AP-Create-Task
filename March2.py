@@ -11,8 +11,6 @@ print("You wake up again and spew out the sand in your mouth, your lips are crus
 print("You get up, dust the sand off of you, pick up your head, and you see: palm trees, seagulls, and only the ocean is behind you. You here the water crashing down, and realize, you're on a deserted island")
 print("Day 1 starts:")
 
-name = input("What is your name?")
-print("Hello, " + name)
 time.sleep(1)
 i = 0
 hp = 100
@@ -106,6 +104,17 @@ def hunt4():
 
 hunt_functions = [hunt1, hunt2, hunt3, hunt4]
 
+def gather1():
+    print()
+    print("You pick up sticks that fell from a sturdy tree.")
+    time.sleep(0.5)
+    print("+ 3 wood")
+def gather2():
+    print()
+    print("You found some scraps of metal leftover from the airplane crash")
+    time.sleep(0.5)
+    print("+ 2 metal")
+
 action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials"))
 time.sleep(1)
 if action == 1:
@@ -120,4 +129,5 @@ if action == 3:
     print("...")
     time.sleep(2)
     random.choice(gather_functions)()
+
 
