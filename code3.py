@@ -1,0 +1,7 @@
+print ("POV: you are sitting in an airplane and all of a sudden it starts shaking, violently. You look out the window and see the engine is on fire. The plane starts going down, fast. But before this lets go to a flashback.")
+print("You are a mailman who has to fly on planes to deliver mail. Its the end of the year and you can smell the bonus. But, your last plane's number is 444, the world's unluckiest number. Now your confronted with 2 choices:")
+print("Deliver those packages, or no bonus. But obviously we take the bonus so we can larp margiela gats.")
+print("Now lets cut back, your seconds away from crashing into the water, you grip the seat and pray to your God. Everything goes black.")
+print("You wake up again and spew out the sand in your mouth, your lips are crusted dry and the sun blazed your skin. Looks like you've out for a while. ")
+print("You get up, dust the sand off of you, pick up your head, and you see: palm trees, seagulls, and only the ocean is behind you. You here the water crashing down, and realize, you're on a deserted island")
+print("Day 1 starts:")
