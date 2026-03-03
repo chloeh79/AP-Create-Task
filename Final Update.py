@@ -1,5 +1,17 @@
 import random
 import time
+import sys
+
+# --- TYPEWRITER EFFECT ---
+def typewriter(text="", speed=0.00):
+    for char in str(text):
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(speed)
+    sys.stdout.write("\n")
+
+# Replace all print statements with typewriter
+print = typewriter
 
 print("Welcome to Castaway")
 print()
@@ -155,3 +167,4 @@ print()
 print("- night -")
 time.sleep(0.5)
 print("It's hard to fall asleep on the ground without a shelter, but you manage.")
+
