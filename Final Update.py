@@ -168,3 +168,10 @@ print("- night -")
 time.sleep(0.5)
 print("It's hard to fall asleep on the ground without a shelter, but you manage.")
 
+print("Day 2")
+print("You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
+print("You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it oopen with your bare hands and find...")
+print("Another box. But then you rip that one open and find...")
+print("A hatchet!")
+inventory2 = [wood, stone, metal, cloth, "hatchet"]
+check_inventory()
