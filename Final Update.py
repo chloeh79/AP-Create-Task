@@ -16,7 +16,7 @@ print = typewriter
 print("Welcome to Castaway")
 print()
 print ("POV: you are sitting in an airplane and all of a sudden it starts shaking, violently. You look out the window and see the engine is on fire. The plane starts going down, fast. But before this lets go to a flashback.")
-print("You are a mailman who has to fly on planes to deliver mail. Its the end of the year and you can smell the bonus. But, your last plane's number is 444, the world's unluckiest number. Now your confronted with 2 choices:")
+print("You are a mailman who has to fly on planes to deliver mail. It's the end of the year and you can smell the bonus. But, your last plane's number is 444, the world's unluckiest number. Now your confronted with 2 choices:")
 print("Deliver those packages, or no bonus. But obviously we take the bonus so we can larp margiela gats.")
 print("Now lets cut back, your seconds away from crashing into the water, you grip the seat and pray to your God. Everything goes black.")
 print("You wake up again and spew out the sand in your mouth, your lips are crusted dry and the sun blazed your skin. Looks like you've out for a while. ")
@@ -46,9 +46,9 @@ def check_inventory():
         print(f"Metal: {metal}")
         print(f"Cloth: {cloth}")
         print(f"Stone: {stone}")
+        if "hatchet" in inventory:
+            print("Hatchet")
 
-def recipes():
-    print()
 
 
 time.sleep(2)
@@ -170,8 +170,8 @@ print("It's hard to fall asleep on the ground without a shelter, but you manage.
 
 print("Day 2")
 print("You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
-print("You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it oopen with your bare hands and find...")
+print("You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it open with your bare hands and find...")
 print("Another box. But then you rip that one open and find...")
 print("A hatchet!")
-inventory2 = [wood, stone, metal, cloth, "hatchet"]
+inventory.append('hatchet')
 check_inventory()
