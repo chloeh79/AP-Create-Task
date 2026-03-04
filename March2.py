@@ -237,3 +237,21 @@ print("Another box. But then you rip that one open and find...")
 print("A hatchet!")
 inventory2.append('hatchet')
 check_inventory()
+
+print("What will you do with the hatchet?")
+choice = input("1 - Build a base | 2 - Hunt: ")
+if choice == "1":
+    print()
+    print("You use the hatchet to chop down trees and start building a small shelter.")
+    print("By nightfall, you have a basic wooden base to protect you from... them.")
+    print("+ 20 wood")
+    wood += 20
+elif choice == "2":
+    print()
+    print("You grip the hatchet tightly and head into the deep forest, the heart of the island.")
+    print("With your new tool, hunting just became a lot easier.")
+    print("+ 20 hp")
+    hp += 20
+    print(f"HP: {hp}")
+else:
+    print("Invalid choice)
