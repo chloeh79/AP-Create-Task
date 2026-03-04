@@ -36,7 +36,8 @@ wood = 0
 stone = 0
 metal = 0
 cloth = 0
-inventory = [wood, stone, metal, cloth] #This is the set inventory for game materials
+string = 0
+inventory = [wood, stone, metal, cloth, string] #This is the set inventory for game materials
 inventory2 = [] #This is the additional inventory for tools and other str items
 
 def check_inventory():
@@ -47,10 +48,20 @@ def check_inventory():
         print(f"Metal: {metal}")
         print(f"Cloth: {cloth}")
         print(f"Stone: {stone}")
+        print(f"String: {string}")
         for item in inventory2:
             print(item)
 
+def recipe_book():
+    print("~Recipe Book~")
+    print("1. Fishing Rod (adds hunting event where you can get fish) ")
+    print("*Requires 3 wood and 5 ")
 
+def craft():
+    print()
+    answer2 = input("Would you like to check the crafting recipe book?")
+    if answer2 == "yes":
+        print()
 
 time.sleep(2)
 print("You wake up from a pleasant dream about fluffy clouds and unicorns")
@@ -137,11 +148,19 @@ def gather3():
     stone += 3
 def gather4():
     print()
-    print("You find some cotton flowers that you stretch into usable cloth")
+    print("You find some cotton flowers that you stretch into usable cloth.")
     time.sleep(0.5)
     print("+ 2 cloth")
     global cloth
     cloth += 2
+def gather5():
+    print()
+    print("You walk into a clear spider web and see a more thick webs hanging over the clearing.")
+    time.sleep(0.5)
+    print("+ 2 string")
+    global string
+    string += 2
+    
 gather_functions = [gather1, gather2, gather3, gather4]
 
 action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
@@ -172,145 +191,4 @@ print("You realize its a mail package. You pick it up and bring to the shade und
 print("Another box. But then you rip that one open and find...")
 print("A hatchet!")
 inventory2.append('hatchet')
-check_inventory()metal = 0
-cloth = 0
-inventory = [wood, stone, metal, cloth]
-
-def check_inventory():
-    print()
-    answer = input("Would you like to check your inventory? ")
-    if answer == "yes":
-        print(f"Wood: {wood}")
-        print(f"Metal: {metal}")
-        print(f"Cloth: {cloth}")
-        print(f"Stone: {stone}")
-        if "hatchet" in inventory:
-            print("Hatchet")
-
-
-
-time.sleep(2)
-print("You wake up from a pleasant dream about fluffy clouds and unicorns")
-time.sleep(1)
-print("...and then you're brought back to reality")
-print()
-time.sleep(2)
-print("You realize that you might be here for a while...hopefully not more than 30 days")
-print()
-time.sleep(3)
-print("You may pick one action before night:")
-time.sleep(1)
-
-def explore1():
-    print()
-    print("You found a waterfall! + 5 hp")
-    global hp
-    hp += 5
-    print(f"HP: {hp}")
-def explore2():
-    print()
-    print("You found a cave! But it was occupied by bears. - 10 hp")
-    global hp
-    hp -= 10
-    print(f"HP: {hp}")
-
-explore_functions = [explore1, explore2]
-
-def hunt1():
-    print()
-    print("You find a small bird tweeting in its nest.")
-    time.sleep(0.5)
-    print("You creep up to it but it flies away. There are, however, eggs in the nest that you can collect.")
-    print("+ 5 hp")
-    global hp
-    hp += 5
-    print(f"HP: {hp}")
-def hunt2():
-    print()
-    print("You creep up on a big fat rabbit and pounce on it. Looks like its meat for dinner today.")
-    print("+ 15 hp")
-    global hp
-    hp += 15
-    print(f"HP: {hp}")
-def hunt3():
-    print()
-    print("You find a plump pigeon sitting on a tree branch.")
-    time.sleep(0.5)
-    print("You try to climb the tree but fall and twist your ankle.")
-    time.sleep(0.5)
-    print("- 10 hp")
-    global hp
-    hp -= 10
-    print(f"HP: {hp}")
-def hunt4():
-    print()
-    print("You stumble upon what looks like a squirrel but is black and white striped.")
-    time.sleep(0.5)
-    print("You attack ti but quickly realize that it's actually a skunk.")
-    time.sleep(0.5)
-    print("- 20 hp")
-    global hp
-    hp -= 20
-    print(f"HP: {hp}")
-
-hunt_functions = [hunt1, hunt2, hunt3, hunt4]
-
-def gather1():
-    print()
-    print("You pick up sticks that fell from a sturdy tree.")
-    time.sleep(0.5)
-    print("+ 3 wood")
-    global wood
-    wood += 3
-def gather2():
-    print()
-    print("You found some scraps of metal leftover from the airplane crash.")
-    time.sleep(0.5)
-    print("+ 2 metal")
-    global metal
-    metal += 2
-def gather3():
-    print()
-    print("You collect some nice rocks that look easy to shape.")
-    time.sleep(0.5)
-    print("+ 3 stone")
-    global stone
-    stone += 3
-def gather4():
-    print()
-    print("You find some cotton flowers that you stretch into usable cloth")
-    time.sleep(0.5)
-    print("+ 2 cloth")
-    global cloth
-    cloth += 2
-gather_functions = [gather1, gather2, gather3, gather4]
-
-action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
-time.sleep(1)
-if action == 1:
-    print("...")
-    time.sleep(2)
-    random.choice(explore_functions)()
-if action == 2:
-    print("...")
-    time.sleep(2)
-    random.choice(hunt_functions)()
-if action == 3:
-    print("...")
-    time.sleep(2)
-    random.choice(gather_functions)()
-    check_inventory()
-
-print()
-print("- night -")
-time.sleep(0.5)
-print("It's hard to fall asleep on the ground without a shelter, but you manage.")
-
-print("Day 2")
-print("You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
-print("You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it open with your bare hands and find...")
-print("Another box. But then you rip that one open and find...")
-print("A hatchet!")
-inventory.append('hatchet')
 check_inventory()
-
