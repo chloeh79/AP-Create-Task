@@ -64,24 +64,53 @@ def check_inventory():
 def recipe_book():
     print("~Recipe Book~")
     print("1. Fishing Rod (adds hunting event where you can get fish) ")
-    print("* Requires 3 wood and 5 string")
+    print("* Requires 3 wood + 5 string")
     print()
-    print("2. Pickaxe (when used, gives 10 stone and 10 metal immediately) ")
-    print("* Requires 2 wood and 3 stone")
+    print("2. Pickaxe (when used, gives 5 stone and 15 metal immediately) ")
+    print("* Requires 2 wood + 3 stone")
     print()
     print("3. Sword (adds hunting event where you can kill animals for food) ")
-    print("* Requires 2 wood and 10 stone")
+    print("* Requires 2 wood + 5 stone + 5 metal")
     print()
     print("4. Pot (gives + 30 hp) ")
     print("* Requires 20 metal")
+    print()
+    print("5. Shield (you might need this later) ")
+    print("Requires 1 wood + 6 metal")
 
+def craft_fishing_rod():
+    print("Fishing Rod: Requires 3 wood + 5 string")
 
+def craft_pickaxe():
+    print("Pickaxe: Requires 2 wood + 3 stone")
+
+def craft_sword():
+    print("Sword: Requires 2 wood + 5 stone + 5 metal")
+
+def craft_pot():
+    print("Pot: Requires 20 metal")
+    
+def craft_shield():
+    print("Shield: Requires 1 wood + 6 metal")
 
 def craft():
     print()
     answer2 = input("Would you like to check the crafting recipe book?")
     if answer2 == "yes":
+        recipe_book()
+    else:
         print()
+    answer2 = input("What would you like to craft?")
+    if answer2 == "1" or "fishing rod":
+        craft_fishing_rod()
+    elif answer2 == "2" or "pickaxe":
+        craft_pickaxe()
+    elif answer2 == "3" or "sword":
+        craft_sword()
+    elif answer2 == "4" or "pot":
+        craft_pot()
+    elif answer2 == "5" or "shield":
+        craft_shield()
 
 
 time.sleep(2)
@@ -246,6 +275,7 @@ if choice == "1":
     print("By nightfall, you have a basic wooden base to protect you from... them.")
     print("+ 20 wood")
     wood += 20
+    check_inventory()
 elif choice == "2":
     print()
     print("You grip the hatchet tightly and head into the deep forest, the heart of the island.")
@@ -254,4 +284,4 @@ elif choice == "2":
     hp += 20
     print(f"HP: {hp}")
 else:
-    print("Invalid choice)
+    print("Invalid choice")
