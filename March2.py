@@ -43,8 +43,8 @@ wood = 0
 stone = 0
 metal = 0
 cloth = 0
-string = 0
-inventory = [wood, stone, metal, cloth, string]  # This is the set inventory for game materials
+strings = 0
+inventory = [wood, stone, metal, cloth, strings]  # This is the set inventory for game materials
 inventory2 = []  # This is the additional inventory for tools and other str items
 
 
@@ -56,7 +56,7 @@ def check_inventory():
         print(f"Metal: {metal}")
         print(f"Cloth: {cloth}")
         print(f"Stone: {stone}")
-        print(f"String: {string}")
+        print(f"String: {strings}")
         for item in inventory2:
             print(item)
 
@@ -81,43 +81,79 @@ def check_inventory():
 
 def craft_fishing_rod():
     print("Fishing Rod: Requires 3 wood + 5 string")
-    if wood >= 3 and string >= 5:
+    global wood, strings
+
+    if wood >= 3 and strings >= 5:
         print("...checking for necessary materials...")
         print("---Crafting Initiated---")
         print("you crafted a fishing rod!")
         inventory2.append("fishing rod")
+        wood -= 3
+        strings -= 5
     else:
-        print("you do not have enough materials to craft this item")
+        print("sorry, you do not have enough materials to craft this item")
         print()
-        answer2 = input("would you like to craft something else?")
-        if answer2 == "yes":
-            craft()
 
 
 def craft_pickaxe():
     print("Pickaxe: Requires 2 wood + 3 stone")
+    global wood, stone
+
+    if wood >= 2 and stone >= 3:
         print("...checking for necessary materials...")
         print("---Crafting Initiated---")
         print("you crafted a pickaxe!")
         inventory2.append("pickaxe")
+        wood -= 2
+        stone -= 3
     else:
-        print("you do not have enough materials to craft this item")
+        print("sorry, you do not have enough materials to craft this item")
         print()
-        answer2 = input("would you like to craft something else?")
-        if answer2 == "yes":
-            craft()
 
 # def craft_sword():
     print("Sword: Requires 2 wood + 5 stone + 5 metal")
+    global wood, stone, metal
 
+    if wood >= 2 and stone >= 5 and metal >= 5:
+        print("...checking for necessary materials...")
+        print("---Crafting Initiated---")
+        print("you crafted a sword!")
+        inventory2.append("sword")
+        wood -= 2
+        stone -= 5
+        metal -= 5
+    else:
+        print("sorry, you do not have enough materials to craft this item")
+        print()
 
 # def craft_pot():
     print("Pot: Requires 20 metal")
+    global metal
 
+    if metal >= 20:
+        print("...checking for necessary materials...")
+        print("---Crafting Initiated---")
+        print("you crafted a pot!")
+        inventory2.append("pot")
+        metal -= 20
+    else:
+        print("sorry, you do not have enough materials to craft this item")
+        print()
 
 # def craft_shield():
     print("Shield: Requires 1 wood + 6 metal")
+    global wood, metal
 
+    if wood >= 1 and metal >= 6:
+        print("...checking for necessary materials...")
+        print("---Crafting Initiated---")
+        print("you crafted a shield!")
+        inventory2.append("shield")
+        wood -= 1
+        metal -= 6
+    else:
+        print("sorry, you do not have enough materials to craft this item")
+        print()
 
 def craft():
     print()
@@ -255,8 +291,8 @@ def gather5():
     print("You walk into a clear spider web and see a more thick webs hanging over the clearing.")
     time.sleep(0.5)
     print("+ 3 string")
-    global string
-    string += 3
+    global strings
+    strings += 3
 
 
 gather_functions = [gather1, gather2, gather3, gather4]
