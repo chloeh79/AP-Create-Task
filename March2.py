@@ -320,10 +320,8 @@ print("It's hard to fall asleep on the ground without a shelter, but you manage.
 time.sleep(2)
 
 print("Day 2")
-print(
-    "You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
-print(
-    "You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it open with your bare hands and find...")
+print("You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
+print("You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it open with your bare hands and find...")
 print("Another box. But then you rip that one open and find...")
 print("A hatchet!")
 inventory2.append('hatchet')
@@ -348,3 +346,62 @@ elif choice == "2":
 else:
     print("Invalid choice")
 
+
+print("Day 3")
+print()
+print("You wake up and feel some invisible force telling you to get to work.")
+print("Maybe it's warning you of something to come.")
+
+action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
+time.sleep(1)
+if action == 1:
+    print("...")
+    time.sleep(2)
+    random.choice(explore_functions)()
+if action == 2:
+    print("...")
+    time.sleep(2)
+    random.choice(hunt_functions)()
+if action == 3:
+    print("...")
+    time.sleep(2)
+    random.choice(gather_functions)()
+    check_inventory()
+    
+print("It's still early in the morning and you've already done something good.")
+print("You definitely feel like you can do a couple more things before nighttime.")
+print()
+action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
+time.sleep(1)
+if action == 1:
+    print("...")
+    time.sleep(2)
+    random.choice(explore_functions)()
+if action == 2:
+    print("...")
+    time.sleep(2)
+    random.choice(hunt_functions)()
+if action == 3:
+    print("...")
+    time.sleep(2)
+    random.choice(gather_functions)()
+    check_inventory()
+    
+print()
+action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
+time.sleep(1)
+if action == 1:
+    print("...")
+    time.sleep(2)
+    random.choice(explore_functions)()
+if action == 2:
+    print("...")
+    time.sleep(2)
+    random.choice(hunt_functions)()
+if action == 3:
+    print("...")
+    time.sleep(2)
+    random.choice(gather_functions)()
+    check_inventory()
+    
+print()
