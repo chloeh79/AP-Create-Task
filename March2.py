@@ -61,7 +61,7 @@ def check_inventory():
             print(item)
 
 
-def recipe_book():
+# def recipe_book():
     print("~Recipe Book~")
     print("1. Fishing Rod (adds hunting event where you can get fish) ")
     print("* Requires 3 wood + 5 string")
@@ -78,20 +78,46 @@ def recipe_book():
     print("5. Shield (you might need this later) ")
     print("Requires 1 wood + 6 metal")
 
+
 def craft_fishing_rod():
     print("Fishing Rod: Requires 3 wood + 5 string")
+    if wood >= 3 and string >= 5:
+        print("...checking for necessary materials...")
+        print("---Crafting Initiated---")
+        print("you crafted a fishing rod!")
+        inventory2.append("fishing rod")
+    else:
+        print("you do not have enough materials to craft this item")
+        print()
+        answer2 = input("would you like to craft something else?")
+        if answer2 == "yes":
+            craft()
+
 
 def craft_pickaxe():
     print("Pickaxe: Requires 2 wood + 3 stone")
+        print("...checking for necessary materials...")
+        print("---Crafting Initiated---")
+        print("you crafted a pickaxe!")
+        inventory2.append("pickaxe")
+    else:
+        print("you do not have enough materials to craft this item")
+        print()
+        answer2 = input("would you like to craft something else?")
+        if answer2 == "yes":
+            craft()
 
-def craft_sword():
+# def craft_sword():
     print("Sword: Requires 2 wood + 5 stone + 5 metal")
 
-def craft_pot():
+
+# def craft_pot():
     print("Pot: Requires 20 metal")
-    
-def craft_shield():
+
+
+# def craft_shield():
     print("Shield: Requires 1 wood + 6 metal")
+
 
 def craft():
     print()
@@ -285,3 +311,4 @@ elif choice == "2":
     print(f"HP: {hp}")
 else:
     print("Invalid choice")
+
