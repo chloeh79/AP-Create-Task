@@ -110,7 +110,7 @@ def craft_pickaxe():
         print("sorry, you do not have enough materials to craft this item")
         print()
 
-# def craft_sword():
+def craft_sword():
     print("Sword: Requires 2 wood + 5 stone + 5 metal")
     global wood, stone, metal
 
@@ -126,7 +126,7 @@ def craft_pickaxe():
         print("sorry, you do not have enough materials to craft this item")
         print()
 
-# def craft_pot():
+def craft_pot():
     print("Pot: Requires 20 metal")
     global metal
 
@@ -140,7 +140,7 @@ def craft_pickaxe():
         print("sorry, you do not have enough materials to craft this item")
         print()
 
-# def craft_shield():
+def craft_shield():
     print("Shield: Requires 1 wood + 6 metal")
     global wood, metal
 
@@ -367,7 +367,7 @@ if action == 3:
     time.sleep(2)
     random.choice(gather_functions)()
     check_inventory()
-    
+
 print("It's still early in the morning and you've already done something good.")
 print("You definitely feel like you can do a couple more things before nighttime.")
 print()
@@ -386,7 +386,7 @@ if action == 3:
     time.sleep(2)
     random.choice(gather_functions)()
     check_inventory()
-    
+
 print()
 action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
 time.sleep(1)
@@ -403,5 +403,7 @@ if action == 3:
     time.sleep(2)
     random.choice(gather_functions)()
     check_inventory()
-    
+
 print()
+
+
