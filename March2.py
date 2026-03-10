@@ -4,19 +4,24 @@ import sys
 
 
 # --- TYPEWRITER EFFECT ---
-def typewriter(text="", speed=0.00):
+def typewriter(text="", speed=0.03):
     for char in str(text):
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(speed)
     sys.stdout.write("\n")
 
-
 # Replace all print statements with typewriter
 print = typewriter
 
-print("Welcome to Castaway")
+def introduce(name):
+    print(f"Hello {name}")
+    print("Welcome to Castaway")
+
+
 print()
+name = input("What is your name? ")
+introduce(name)
 print(
     "POV: you are sitting in an airplane and all of a sudden it starts shaking, violently. You look out the window and see the engine is on fire. The plane starts going down, fast. But before this lets go to a flashback.")
 print(
@@ -42,9 +47,8 @@ shelter = False
 wood = 0
 stone = 0
 metal = 0
-cloth = 0
 strings = 0
-inventory = [wood, stone, metal, cloth, strings]  # This is the set inventory for game materials
+inventory = [wood, stone, metal, strings]  # This is the set inventory for game materials
 inventory2 = []  # This is the additional inventory for tools and other str items
 
 
@@ -54,20 +58,21 @@ def check_inventory():
     if answer == "yes":
         print(f"Wood: {wood}")
         print(f"Metal: {metal}")
-        print(f"Cloth: {cloth}")
         print(f"Stone: {stone}")
         print(f"String: {strings}")
         for item in inventory2:
             print(item)
+    else:
+        print()
+    print()
 
-
-# def recipe_book():
+def recipe_book():
     print("~Recipe Book~")
     print("1. Fishing Rod (adds hunting event where you can get fish) ")
     print("* Requires 3 wood + 5 string")
     print()
     print("2. Pickaxe (when used, gives 5 stone and 15 metal immediately) ")
-    print("* Requires 2 wood + 3 stone")
+    print("* Requires 2 wood + 2 metal")
     print()
     print("3. Sword (adds hunting event where you can kill animals for food) ")
     print("* Requires 2 wood + 5 stone + 5 metal")
@@ -96,16 +101,16 @@ def craft_fishing_rod():
 
 
 def craft_pickaxe():
-    print("Pickaxe: Requires 2 wood + 3 stone")
-    global wood, stone
+    print("Pickaxe: Requires 2 wood + 2 metal")
+    global wood, metal
 
-    if wood >= 2 and stone >= 3:
+    if wood >= 2 and metal >= 2:
         print("...checking for necessary materials...")
         print("---Crafting Initiated---")
         print("you crafted a pickaxe!")
         inventory2.append("pickaxe")
         wood -= 2
-        stone -= 3
+        metal -= 3
     else:
         print("sorry, you do not have enough materials to craft this item")
         print()
@@ -279,11 +284,11 @@ def gather3():
 
 def gather4():
     print()
-    print("You find some cotton flowers that you stretch into usable cloth.")
+    print("You find some cotton flowers that you stretch into usable string.")
     time.sleep(0.5)
-    print("+ 2 cloth")
-    global cloth
-    cloth += 2
+    print("+ 2 string")
+    global strings
+    strings += 2
 
 
 def gather5():
@@ -406,4 +411,18 @@ if action == 3:
 
 print()
 
-
+print("While working, you see a treasure chest at the bottom of a lake")
+print()
+choice1 = input("Do you want to try to retrieve the chest?")
+if choice1 == "yes":
+    print("You dive into the lake headfirst, feeling the cold water shock your body.")
+    print("You get your hands on the chest and feel the heavy weight of it, despite being in the water.")
+    print("It's a struggle to pull the chest out of the sand and you feel your lungs burning for air.")
+    print("...")
+    print("You pull the chest free!")
+    print("You drag it onto the beach to reap your rewards")
+    print()
+    print("+ 5 wood")
+    print("+ 10 metal")
+    print("+ 2 string")
+    print("+ ")
