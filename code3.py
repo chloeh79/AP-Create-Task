@@ -1,180 +1,56 @@
-import random
-import time
-import sys
-
-# --- TYPEWRITER EFFECT ---
-def typewriter(text="", speed=0.00):
-    for char in str(text):
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(speed)
-    sys.stdout.write("\n")
-
-# Replace all print statements with typewriter
-print = typewriter
-
-
-print("Welcome to Castaway")
-print()
-print("POV: you are sitting in an airplane and all of a sudden it starts shaking, violently. You look out the window and see the engine is on fire. The plane starts going down, fast. But before this lets go to a flashback.")
-print("You are a mailman who has to fly on planes to deliver mail. Its the end of the year and you can smell the bonus. But, your last plane's number is 444, the world's unluckiest number. Now your confronted with 2 choices:")
-print("Deliver those packages, or no bonus. But obviously we take the bonus so we can larp margiela gats.")
-print("Now lets cut back, your seconds away from crashing into the water, you grip the seat and pray to your God. Everything goes black.")
-print("You wake up again and spew out the sand in your mouth, your lips are crusted dry and the sun blazed your skin. Looks like you've out for a while.")
-print("You get up, dust the sand off of you, pick up your head, and you see: palm trees, seagulls, and only the ocean is behind you. You here the water crashing down, and realize, you're on a deserted island")
-print("Day 1 starts:")
-
-time.sleep(1)
-i = 0
-hp = 100
-print()
-print(f"HP: {hp}")
-print()
-food = False
-water = False
-shelter = False
-wood = 0
-stone = 0
-metal = 0
-cloth = 0
-inventory = [wood, stone, metal, cloth]
-
-def check_inventory():
-    print()
-    answer = input("Would you like to check your inventory?")
-    if answer == "yes":
-        print(f"Wood: {wood}")
-        print(f"Metal: {metal}")
-        print(f"Cloth: {cloth}")
-        print(f"Stone: {stone}")
-
-time.sleep(2)
-print("You wake up from a pleasant dream about fluffy clouds and unicorns")
-time.sleep(1)
-print("...and then you're brought back to reality")
-print()
-time.sleep(2)
-print("You realize that you'll have to find food, shelter, and water if you want to survive. Every 5 days you must meet 3 needs, otherwise you lose")
-print()
-time.sleep(3)
-print("You may choose 3 actions before night:")
-time.sleep(1)
-
-def explore1():
-    global hp
-    print()
-    print("You found a waterfall! + 5 hp")
-    hp += 5
-    print(f"HP: {hp}")
-
-def explore2():
-    global hp
-    print()
-    print("You found a cave! But it was occupied by bears. - 10 hp")
-    hp -= 10
-    print(f"HP: {hp}")
-
-explore_functions = [explore1, explore2]
-
-def hunt1():
-    global hp
-    print()
-    print("You find a small bird tweeting in its nest.")
-    time.sleep(0.5)
-    print("You creep up to it but it flies away. There are, however, eggs in the nest that you can collect.")
-    print("+ 5 hp")
-    hp += 5
-    print(f"HP: {hp}")
-
-def hunt2():
-    global hp
-    print()
-    print("You creep up on a big fat rabbit and pounce on it. Looks like its meat for dinner today.")
-    print("+ 15 hp")
-    hp += 15
-    print(f"HP: {hp}")
-
-def hunt3():
-    global hp
-    print()
-    print("You find a plump pigeon sitting on a tree branch.")
-    time.sleep(0.5)
-    print("You try to climb the tree but fall and twist your ankle.")
-    time.sleep(0.5)
-    print("- 10 hp")
-    hp -= 10
-    print(f"HP: {hp}")
-
-def hunt4():
-    global hp
-    print()
-    print("You stumble upon what looks like a squirrel but is black and white striped.")
-    time.sleep(0.5)
-    print("You attack it but quickly realize that it's actually a skunk.")
-    time.sleep(0.5)
-    print("- 20 hp")
-    hp -= 20
-    print(f"HP: {hp}")
-
-hunt_functions = [hunt1, hunt2, hunt3, hunt4]
-
-def gather1():
-    global wood
-    print()
-    print("You pick up sticks that fell from a sturdy tree.")
-    time.sleep(0.5)
-    print("+ 3 wood")
-    wood += 3
-
-def gather2():
-    global metal
-    print()
-    print("You found some scraps of metal leftover from the airplane crash.")
-    time.sleep(0.5)
-    print("+ 2 metal")
-    metal += 2
-
-def gather3():
-    global stone
-    print()
-    print("You collect some nice rocks that look easy to shape.")
-    time.sleep(0.5)
-    print("+ 3 stone")
-    stone += 3
-
-def gather4():
-    global cloth
-    print()
-    print("You find some cotton flowers that you stretch into usable cloth")
-    time.sleep(0.5)
-    print("+ 2 cloth")
-    cloth += 2
-
-gather_functions = [gather1, gather2, gather3, gather4]
-
-action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials"))
-time.sleep(1)
-
-if action == 1:
-    print("...")
-    time.sleep(2)
-    random.choice(explore_functions)()
-
-if action == 2:
-    print("...")
-    time.sleep(2)
-    random.choice(hunt_functions)()
-
-if action == 3:
-    print("...")
-    time.sleep(2)
-    random.choice(gather_functions)()
-    check_inventory()
-
 print("Day 2")
-print("You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
-print("You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it oopen with your bare hands and find...")
+print(
+    "You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
+print(
+    "You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it open with your bare hands and find...")
 print("Another box. But then you rip that one open and find...")
 print("A hatchet!")
-inventory2 = [wood, stone, metal, cloth, "hatchet"]
+inventory2.append('hatchet')
 check_inventory()
+print("What sha'll you do with the hatchet?")
+choice = input("1 - Build a base | 2 - Hunt: ")
+
+if choice == "1":
+    print()
+    print("You use the hatchet to chop down trees and start building a small shelter.")
+    print("By nightfall, you have a basic wooden base.")
+    print("+ 20 wood")
+    wood += 20
+
+elif choice == "2":
+    print()
+    print("You grip the hatchet tightly and head into the deep forest, the heart of the island.")
+    print("With your new tool, hunting just became a lot easier.")
+    print("+ 20 hp")
+    hp += 20
+    print(f"HP: {hp}")
+else:
+    print("Invalid choice.")
+
+print("After working all day you set 6 big stones in a cirlce, find some twigs, some dry leaves, and try to start a fire. It doesn't work. ")
+print("You try again, but no flames appear.")
+print("You need something to help you. You remember the package that gave you your most useful tool, the hatchet.")
+print("Let's try to find some more packages.Where do you want to look first?")
+choice = input("1 - Behind the huge stone rocks | 2 - In the plane carcass: ")
+if choice == "1":
+    print()
+    print("You climb the rocks and find...")
+    print("Nothing?")
+    print("Let's try choice 2.")
+    print()
+    print("You walk towards the remains of the plane, it is destroyed with only the back half still in tact. You go inside, and find your current holy grail.")
+    print("There are 3 packages scattered on the airplane floor, in almost perfect condition. You pick all of them up and run back to the base.")
+    print("You decide that for each day that passes, you open a new package. You choose the one that you think is most likely to help you with the fire and... ")
+    print("You did it! You found a lighter!")
+    print("You scramble back to your fire and after a few clicks, it starts to burn. You blow on it hard and the flame starts to spread.")
+    print("Congratulations, you now have a fire.")
+elif choice == "2":
+    print()
+    print("You walk towards the remains of the plane, it is destroyed with only the back half still in tact. You go inside, and find your current holy grail.")
+    print("There are 3 packages scattered on the airplane floor, in almost perfect condition. You pick all of them up and run back to the base.")
+    print("You decide that for each day that passes, you open a new package. You choose the on that you think is most likely to help you with the fire and... ")
+    print("You did it! You found a lighter!")
+    print("You scramble back to your fire and after a few clicks, it starts to burn. You blow on it hard and the flame starts to spread.")
+    print("Congratulations, you now have a fire.")
+print("With this new accomplishment you now go to bed satisfied.")
+print()
