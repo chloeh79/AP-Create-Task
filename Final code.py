@@ -11,8 +11,10 @@ def typewriter(text="", speed=0.03):
         time.sleep(speed)
     sys.stdout.write("\n")
 
+
 # Replace all print statements with typewriter
 print = typewriter
+
 
 def introduce(name):
     print(f"Hello {name}")
@@ -66,6 +68,7 @@ def check_inventory():
         print()
     print()
 
+
 def recipe_book():
     print("~Recipe Book~")
     print("1. Fishing Rod (adds hunting event where you can get fish) ")
@@ -74,13 +77,13 @@ def recipe_book():
     print("2. Pickaxe (when used, gives 5 stone and 15 metal immediately) ")
     print("* Requires 2 wood + 2 metal")
     print()
-    print("3. Sword (adds hunting event where you can kill animals for food) ")
+    print("3. Sword")
     print("* Requires 2 wood + 5 stone + 5 metal")
     print()
     print("4. Pot (gives + 30 hp) ")
     print("* Requires 20 metal")
     print()
-    print("5. Shield (you might need this later) ")
+    print("5. Shield")
     print("Requires 1 wood + 6 metal")
 
 
@@ -102,7 +105,7 @@ def craft_fishing_rod():
 
 def craft_pickaxe():
     print("Pickaxe: Requires 2 wood + 2 metal")
-    global wood, metal
+    global wood, metal, stone
 
     if wood >= 2 and metal >= 2:
         print("...checking for necessary materials...")
@@ -111,9 +114,14 @@ def craft_pickaxe():
         inventory2.append("pickaxe")
         wood -= 2
         metal -= 3
+        print("+ 5 stone")
+        print("+ 15 metal")
+        metal += 15
+        stone += 5
     else:
         print("sorry, you do not have enough materials to craft this item")
         print()
+
 
 def craft_sword():
     print("Sword: Requires 2 wood + 5 stone + 5 metal")
@@ -131,6 +139,7 @@ def craft_sword():
         print("sorry, you do not have enough materials to craft this item")
         print()
 
+
 def craft_pot():
     print("Pot: Requires 20 metal")
     global metal
@@ -141,9 +150,12 @@ def craft_pot():
         print("you crafted a pot!")
         inventory2.append("pot")
         metal -= 20
+        print("+ 30 hp")
+        print(f"HP: {hp}")
     else:
         print("sorry, you do not have enough materials to craft this item")
         print()
+
 
 def craft_shield():
     print("Shield: Requires 1 wood + 6 metal")
@@ -159,6 +171,7 @@ def craft_shield():
     else:
         print("sorry, you do not have enough materials to craft this item")
         print()
+
 
 def craft():
     print()
@@ -325,8 +338,10 @@ print("It's hard to fall asleep on the ground without a shelter, but you manage.
 time.sleep(2)
 
 print("Day 2")
-print("You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
-print("You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it open with your bare hands and find...")
+print(
+    "You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
+print(
+    "You realize its a mail package. You pick it up and bring to the shade under the palm trees. You rip it open with your bare hands and find...")
 print("Another box. But then you rip that one open and find...")
 print("A hatchet!")
 inventory2.append('hatchet')
@@ -351,7 +366,8 @@ elif choice == "2":
 else:
     print("Invalid choice.")
 
-print("After working all day you set 6 big stones in a cirlce, find some twigs, some dry leaves, and try to start a fire. It doesn't work. ")
+print(
+    "After working all day you set 6 big stones in a cirlce, find some twigs, some dry leaves, and try to start a fire. It doesn't work. ")
 print("You try again, but no flames appear.")
 print("You need something to help you. You remember the package that gave you your most useful tool, the hatchet.")
 print("Let's try to find some more packages.Where do you want to look first?")
@@ -362,19 +378,27 @@ if choice == "1":
     print("Nothing?")
     print("Let's try choice 2.")
     print()
-    print("You walk towards the remains of the plane, it is destroyed with only the back half still in tact. You go inside, and find your current holy grail.")
-    print("There are 3 packages scattered on the airplane floor, in almost perfect condition. You pick all of them up and run back to the base.")
-    print("You decide that for each day that passes, you open a new package. You choose the one that you think is most likely to help you with the fire and... ")
+    print(
+        "You walk towards the remains of the plane, it is destroyed with only the back half still in tact. You go inside, and find your current holy grail.")
+    print(
+        "There are 3 packages scattered on the airplane floor, in almost perfect condition. You pick all of them up and run back to the base.")
+    print(
+        "You decide that for each day that passes, you open a new package. You choose the one that you think is most likely to help you with the fire and... ")
     print("You did it! You found a lighter!")
-    print("You scramble back to your fire and after a few clicks, it starts to burn. You blow on it hard and the flame starts to spread.")
+    print(
+        "You scramble back to your fire and after a few clicks, it starts to burn. You blow on it hard and the flame starts to spread.")
     print("Congratulations, you now have a fire.")
 elif choice == "2":
     print()
-    print("You walk towards the remains of the plane, it is destroyed with only the back half still in tact. You go inside, and find your current holy grail.")
-    print("There are 3 packages scattered on the airplane floor, in almost perfect condition. You pick all of them up and run back to the base.")
-    print("You decide that for each day that passes, you open a new package. You choose the on that you think is most likely to help you with the fire and... ")
+    print(
+        "You walk towards the remains of the plane, it is destroyed with only the back half still in tact. You go inside, and find your current holy grail.")
+    print(
+        "There are 3 packages scattered on the airplane floor, in almost perfect condition. You pick all of them up and run back to the base.")
+    print(
+        "You decide that for each day that passes, you open a new package. You choose the on that you think is most likely to help you with the fire and... ")
     print("You did it! You found a lighter!")
-    print("You scramble back to your fire and after a few clicks, it starts to burn. You blow on it hard and the flame starts to spread.")
+    print(
+        "You scramble back to your fire and after a few clicks, it starts to burn. You blow on it hard and the flame starts to spread.")
     print("Congratulations, you now have a fire.")
 print("With this new accomplishment you now go to bed satisfied.")
 print()
@@ -461,7 +485,10 @@ if choice1 == "yes":
 else:
     print()
     print("You decide not to risk it.")
-    
+print()
+print("You have been working all day and think that some tools might be helpful.")
+craft()
+
 print()
 print("You walk back home and decide to open another package from the plane crash.")
 print("You crack open a nice looking package to see...a volleyball and some markers.")
@@ -470,3 +497,4 @@ volleyball = input("What would you like to name your new volleyball friend? ")
 print(f"You decide to name it {volleyball}.")
 print()
 print(f"Tired from the long day, you and {volleyball} go to sleep, prepared to survive together for the days to come.")
+
