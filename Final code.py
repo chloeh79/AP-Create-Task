@@ -4,7 +4,7 @@ import sys
 
 
 # --- TYPEWRITER EFFECT ---
-def typewriter(text="", speed=0.03):
+def typewriter(text="", speed=0.00):
     for char in str(text):
         sys.stdout.write(char)
         sys.stdout.flush()
@@ -67,25 +67,6 @@ def check_inventory():
     else:
         print()
     print()
-
-
-def recipe_book():
-    print("~Recipe Book~")
-    print("1. Fishing Rod (adds hunting event where you can get fish) ")
-    print("* Requires 3 wood + 5 string")
-    print()
-    print("2. Pickaxe (when used, gives 5 stone and 15 metal immediately) ")
-    print("* Requires 2 wood + 2 metal")
-    print()
-    print("3. Sword")
-    print("* Requires 2 wood + 5 stone + 5 metal")
-    print()
-    print("4. Pot (gives + 30 hp) ")
-    print("* Requires 20 metal")
-    print()
-    print("5. Shield")
-    print("Requires 1 wood + 6 metal")
-
 
 def craft_fishing_rod():
     print("Fishing Rod: Requires 3 wood + 5 string")
@@ -177,10 +158,22 @@ def craft():
     print()
     answer2 = input("Would you like to check the crafting recipe book?")
     if answer2 == "yes":
-        recipe_book()
-    else:
+        print("~Recipe Book~")
+        print("1. Fishing Rod (adds hunting event where you can get fish) ")
+        print("* Requires 3 wood + 5 string")
         print()
-    answer2 = input("What would you like to craft?")
+        print("2. Pickaxe (when used, gives 5 stone and 15 metal immediately) ")
+        print("* Requires 2 wood + 2 metal")
+        print()
+        print("3. Sword")
+        print("* Requires 2 wood + 5 stone + 5 metal")
+        print()
+        print("4. Pot (gives + 30 hp) ")
+        print("* Requires 20 metal")
+        print()
+        print("5. Shield")
+        print("Requires 1 wood + 6 metal")
+    answer2 = input("What do you want to craft?")
     if answer2 == "1" or "fishing rod":
         craft_fishing_rod()
     elif answer2 == "2" or "pickaxe":
@@ -379,7 +372,7 @@ if choice == "1":
     print("Let's try choice 2.")
     print()
     print(
-        "You walk towards the remains of the plane, it is destroyed with only the back half still in tact. You go inside, and find your current holy grail.")
+        "You walk towards the remains of the plane, it is destroyed with only the back half still intact. You go inside, and find your current holy grail.")
     print(
         "There are 3 packages scattered on the airplane floor, in almost perfect condition. You pick all of them up and run back to the base.")
     print(
@@ -478,6 +471,9 @@ if choice1 == "yes":
     print("+ 10 metal")
     print("+ 2 string")
     print("+ dagger")
+    wood += 5
+    metal += 10
+    strings += 2
     print()
     inventory2.append("dagger")
     check_inventory()
@@ -493,7 +489,7 @@ print()
 print("You walk back home and decide to open another package from the plane crash.")
 print("You crack open a nice looking package to see...a volleyball and some markers.")
 print("It's obvious what you should do, so you take a marker and draw a smiley face on the volleyball.")
-volleyball = input("What would you like to name your new volleyball friend? ")
+volleyball = input("What do you want to name your new volleyball friend? ")
 print(f"You decide to name it {volleyball}.")
 print()
 print(f"Tired from the long day, you and {volleyball} go to sleep, prepared to survive together for the days to come.")
@@ -511,8 +507,18 @@ if item_use in inventory2:
     print()
     print(f"You pull out {item_use} and step in front of {volleyball}")
     print("You fight with all your might against the bear and successfully make it back off.")
-    print("The bear runs away, slightly wounded and you yell, victorious.")
-    
+    print(f"The bear runs away, slightly wounded and you cheer and hug {volleyball}.")
+    print()
+    print("You fall back asleep peacefully.")
+else:
+    print()
+    print(f"You step forward bravely in front of {volleyball}.")
+    print("The bear charges towards you and you yell at it and make yourself bigger.")
+    print("Your yelling throws the bear off but not before it scratches your leg.")
+    print("- 20 hp")
+    print("The bear runs away.")
+    print(f"You curl up next to {volleyball} and go back to sleep")
+
 
 print("Day 4 begins.")
 print(f"You wake up and see {volleyball} right by your side. You guys have a friendly little chat.")
