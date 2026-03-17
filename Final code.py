@@ -4,7 +4,7 @@ import sys
 
 
 # --- TYPEWRITER EFFECT ---
-def typewriter(text="", speed=0.00):
+def typewriter(text="", speed=0.03):
     for char in str(text):
         sys.stdout.write(char)
         sys.stdout.flush()
@@ -520,3 +520,4 @@ print("You arrive to the home, ring the doorbell, and wait. A kind old man in a 
 print("He complains about the late delivery and the damaged packaging but you just leave without really caring. You feel a sense of fulfillment.")
 print("You drive into the sunset as the old man opens his package back at his home. He takes out what seems to be a Satellite Messenger. This whole time, rescue could have been a lot easier.")
 print("                                                                               ...The End...")
+
