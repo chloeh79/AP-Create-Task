@@ -25,7 +25,7 @@ print()
 name = input("What is your name? ")
 introduce(name)
 print(
-    "POV: you are sitting in an airplane and all of a sudden it starts shaking, violently. You look out the window and see the engine is on fire. The plane starts going down, fast. But before this lets go to a flashback.")
+    "POV: you are sitting in an airplane and all of a sudden it starts shaking, violently. You look out the window and see the engine is on fire. The plane starts going down, fast. But before this let's go to a flashback.")
 print(
     "You are a mailman who has to fly on planes to deliver mail. It's the end of the year and you can smell the bonus. But, your last plane's number is 444, the world's unluckiest number. Now your confronted with 2 choices:")
 print("Deliver those packages, or no bonus. But obviously we take the bonus so we can larp margiela gats.")
@@ -102,7 +102,7 @@ def craft_pickaxe():
     else:
         print("sorry, you do not have enough materials to craft this item")
         print()
-
+    check_inventory()
 
 def craft_sword():
     print("Sword: Requires 2 wood + 5 stone + 5 metal")
@@ -122,15 +122,15 @@ def craft_sword():
 
 
 def craft_pot():
-    print("Pot: Requires 20 metal")
+    print("Pot: Requires 10 metal")
     global metal
 
-    if metal >= 20:
+    if metal >= 10:
         print("...checking for necessary materials...")
         print("---Crafting Initiated---")
         print("you crafted a pot!")
         inventory2.append("pot")
-        metal -= 20
+        metal -= 10
         print("+ 30 hp")
         print(f"HP: {hp}")
     else:
@@ -156,8 +156,8 @@ def craft_shield():
 
 def craft():
     print()
-    answer2 = input("Would you like to check the crafting recipe book?")
-    if answer2 == "yes":
+    answer3 = input("Would you like to check the crafting recipe book? ")
+    if answer3 == "yes":
         print("~Recipe Book~")
         print("1. Fishing Rod (adds hunting event where you can get fish) ")
         print("* Requires 3 wood + 5 string")
@@ -173,17 +173,19 @@ def craft():
         print()
         print("5. Shield")
         print("Requires 1 wood + 6 metal")
-    answer2 = input("What do you want to craft?")
-    if answer2 == "1" or "fishing rod":
+    answer2 = input("What do you want to craft? (1-5 or name of item) ")
+    if answer2 == "1" or answer2.lower() == "fishing rod":
         craft_fishing_rod()
-    elif answer2 == "2" or "pickaxe":
+    elif answer2 == "2" or answer2.lower() == "pickaxe":
         craft_pickaxe()
-    elif answer2 == "3" or "sword":
+    elif answer2 == "3" or answer2.lower() == "sword":
         craft_sword()
-    elif answer2 == "4" or "pot":
+    elif answer2 == "4" or answer2.lower() == "pot":
         craft_pot()
-    elif answer2 == "5" or "shield":
+    elif answer2 == "5" or answer2.lower() == "shield":
         craft_shield()
+    else:
+        print("Invalid choice.")
 
 
 time.sleep(2)
@@ -308,22 +310,24 @@ def gather5():
 
 gather_functions = [gather1, gather2, gather3, gather4]
 
-action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
-time.sleep(1)
-if action == 1:
-    print("...")
-    time.sleep(2)
-    random.choice(explore_functions)()
-if action == 2:
-    print("...")
-    time.sleep(2)
-    random.choice(hunt_functions)()
-if action == 3:
-    print("...")
-    time.sleep(2)
-    random.choice(gather_functions)()
-    check_inventory()
+def user_action():
+    action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
+    time.sleep(0.5)
+    if action == 1:
+        print("...")
+        time.sleep(2)
+        random.choice(explore_functions)()
+    if action == 2:
+        print("...")
+        time.sleep(2)
+        random.choice(hunt_functions)()
+    if action == 3:
+        print("...")
+        time.sleep(2)
+        random.choice(gather_functions)()
+        check_inventory()
 
+user_action()
 print()
 print("- night -")
 time.sleep(0.5)
@@ -401,68 +405,27 @@ print()
 print("You wake up and feel some invisible force telling you to get to work.")
 print("Maybe it's warning you of something to come.")
 
-action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
-time.sleep(1)
-if action == 1:
-    print("...")
-    time.sleep(2)
-    random.choice(explore_functions)()
-if action == 2:
-    print("...")
-    time.sleep(2)
-    random.choice(hunt_functions)()
-if action == 3:
-    print("...")
-    time.sleep(2)
-    random.choice(gather_functions)()
-    check_inventory()
+user_action()
 
 print("It's still early in the morning and you've already done something good.")
 print("You definitely feel like you can do a couple more things before nighttime.")
 print()
-action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
-time.sleep(1)
-if action == 1:
-    print("...")
-    time.sleep(2)
-    random.choice(explore_functions)()
-if action == 2:
-    print("...")
-    time.sleep(2)
-    random.choice(hunt_functions)()
-if action == 3:
-    print("...")
-    time.sleep(2)
-    random.choice(gather_functions)()
-    check_inventory()
+user_action()
 
 print()
-action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
-time.sleep(1)
-if action == 1:
-    print("...")
-    time.sleep(2)
-    random.choice(explore_functions)()
-if action == 2:
-    print("...")
-    time.sleep(2)
-    random.choice(hunt_functions)()
-if action == 3:
-    print("...")
-    time.sleep(2)
-    random.choice(gather_functions)()
-    check_inventory()
+user_action()
 
 print()
 
 print("While working, you see a treasure chest at the bottom of a lake")
 print()
-choice1 = input("Do you want to try to retrieve the chest?")
+choice1 = input("Do you want to try to retrieve the chest? ")
 if choice1 == "yes":
     print("You dive into the lake headfirst, feeling the cold water shock your body.")
     print("You get your hands on the chest and feel the heavy weight of it, despite being in the water.")
     print("It's a struggle to pull the chest out of the sand and you feel your lungs burning for air.")
     print("- 25 hp")
+    hp += 25
     print("...")
     print("You pull the chest free!")
     print("You drag it onto the beach to reap your rewards")
@@ -481,9 +444,17 @@ if choice1 == "yes":
 else:
     print()
     print("You decide not to risk it.")
+
+
 print()
 print("You have been working all day and think that some tools might be helpful.")
 craft()
+print()
+choice2 = input("Would you like to craft again? ")
+if choice2 == "yes":
+    craft()
+else:
+    print()
 
 print()
 print("You walk back home and decide to open another package from the plane crash.")
@@ -505,7 +476,7 @@ print(f"Current Inventory: {inventory2}")
 item_use = input("Which item would you like to use? ")
 if item_use in inventory2:
     print()
-    print(f"You pull out {item_use} and step in front of {volleyball}")
+    print(f"You pull out your {item_use} and step in front of {volleyball}")
     print("You fight with all your might against the bear and successfully make it back off.")
     print(f"The bear runs away, slightly wounded and you cheer and hug {volleyball}.")
     print()
