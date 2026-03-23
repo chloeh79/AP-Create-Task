@@ -16,6 +16,7 @@ def typewriter(text="", speed=0.03):
 print = typewriter
 
 # coded by partner 1
+# procedure introduces the user to the game
 def introduce(name):
     print(f"Hello {name}")
     print("Welcome to Castaway")
@@ -55,7 +56,8 @@ strings = 0
 inventory = [wood, stone, metal, strings]  # This is the set inventory for game materials
 inventory2 = []  # This is the additional inventory for tools and other str items
 
-
+# This procedure checks the values of the item variables and prints them out for the user
+# It also prints any collected tools from inventory2
 def check_inventory():
     print()
     answer = input("Would you like to check your inventory? ")
@@ -70,6 +72,7 @@ def check_inventory():
         print()
     print()
 
+# This procedure and the following craft procedures allow you to use the items in your inventory to create a tool for inventory2
 def craft_fishing_rod():
     print("Fishing Rod: Requires 3 wood + 5 string")
     global wood, strings
@@ -155,13 +158,13 @@ def craft_shield():
         print("sorry, you do not have enough materials to craft this item")
         print()
 
-
+# This is the crafting procedure that calls the individual craft procedures above
 def craft():
     print()
     answer3 = input("Would you like to check the crafting recipe book? ")
     if answer3 == "yes":
         print("~Recipe Book~")
-        print("1. Fishing Rod (adds hunting event where you can get fish) ")
+        print("1. Fishing Rod")
         print("* Requires 3 wood + 5 string")
         print()
         print("2. Pickaxe (when used, gives 5 stone and 15 metal immediately) ")
@@ -198,7 +201,7 @@ print("You realize that you might be here for a while...hopefully not more than 
 print()
 print("You may pick one action before night:")
 
-
+# adding explore events to a list that can be randomly chosen from
 def explore1():
     print()
     print("You found a waterfall! + 5 hp")
@@ -217,7 +220,7 @@ def explore2():
 
 explore_functions = [explore1, explore2]
 
-
+# adding hunt events to a list that can be randomly chosen from
 def hunt1():
     print()
     print("You find a small bird tweeting in its nest.")
@@ -264,7 +267,7 @@ def hunt4():
 
 hunt_functions = [hunt1, hunt2, hunt3, hunt4]
 
-
+# adding gather events to a list that can be randomly chosen from
 def gather1():
     print()
     print("You pick up sticks that fell from a sturdy tree.")
@@ -319,6 +322,7 @@ def gather6():
 
 gather_functions = [gather1, gather2, gather3, gather4, gather 5, gather6]
 
+# procedure where user chooses an action which outputs a random event from the action lists
 def user_action():
     action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
     time.sleep(0.5)
