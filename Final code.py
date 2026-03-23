@@ -2,7 +2,7 @@ import random
 import time
 import sys
 
-
+# ai assisted
 # --- TYPEWRITER EFFECT ---
 def typewriter(text="", speed=0.03):
     for char in str(text):
@@ -15,7 +15,7 @@ def typewriter(text="", speed=0.03):
 # Replace all print statements with typewriter
 print = typewriter
 
-
+# coded by partner 1
 def introduce(name):
     print(f"Hello {name}")
     print("Welcome to Castaway")
@@ -24,6 +24,7 @@ def introduce(name):
 print()
 name = input("What is your name? ")
 introduce(name)
+# coded by partner 2
 print(
     "POV: you are sitting in an airplane and all of a sudden it starts shaking, violently. You look out the window and see the engine is on fire. The plane starts going down, fast. But before this let's go to a flashback.")
 print(
@@ -37,6 +38,7 @@ print(
     "You get up, dust the sand off of you, pick up your head, and you see: palm trees, seagulls, and only the ocean is behind you. You here the water crashing down, and realize, you're on a deserted island")
 print("Day 1 starts:")
 
+# coded by partner 1
 time.sleep(1)
 i = 0
 hp = 100
@@ -307,8 +309,15 @@ def gather5():
     global strings
     strings += 3
 
+def gather6():
+    print()
+    print("You grab some metal scraps from the leftover plane crash")
+    time.sleep(0.5)
+    print("+ 5 metal")
+    global metal
+    metal += 5
 
-gather_functions = [gather1, gather2, gather3, gather4]
+gather_functions = [gather1, gather2, gather3, gather4, gather 5, gather6]
 
 def user_action():
     action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
@@ -334,6 +343,7 @@ time.sleep(0.5)
 print("It's hard to fall asleep on the ground without a shelter, but you manage.")
 time.sleep(2)
 
+# coded by partner 2
 print("Day 2")
 print(
     "You wake up and get up off of the bed that you made out of the coconut tree leaves, you take a quick dive in the ocean to wash your face. You come back up to the surface and see a white box floating towards you.")
@@ -400,6 +410,7 @@ elif choice == "2":
 print("With this new accomplishment you now go to bed satisfied.")
 print()
 
+# coded by partner 1
 print("Day 3")
 print()
 print("You wake up and feel some invisible force telling you to get to work.")
@@ -490,7 +501,7 @@ else:
     print("The bear runs away.")
     print(f"You curl up next to {volleyball} and go back to sleep")
 
-
+# coded by partner 2
 print("Day 4 begins.")
 print(f"You wake up and see {volleyball} right by your side. You guys have a friendly little chat.")
 print("You tell Sam about what your life was like before you got trapped on this little Island. You remember the tasty food, the beautiful skyscrapers, you even start to miss your boss.")
