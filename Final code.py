@@ -36,7 +36,7 @@ print(
 print(
     "You wake up again and spew out the sand in your mouth, your lips are crusted dry and the sun blazed your skin. Looks like you've out for a while. ")
 print(
-    "You get up, dust the sand off of you, pick up your head, and you see: palm trees, seagulls, and only the ocean is behind you. You here the water crashing down, and realize, you're on a deserted island")
+    "You get up, dust the sand off of you, pick up your head, and you see: palm trees, seagulls, and only the ocean is behind you. You hear the water crashing down, and realize, you're on a deserted island")
 print("Day 1 starts:")
 
 # coded by partner 1
@@ -257,7 +257,7 @@ def hunt4():
     print()
     print("You stumble upon what looks like a squirrel but is black and white striped.")
     time.sleep(0.5)
-    print("You attack ti but quickly realize that it's actually a skunk.")
+    print("You attack it but quickly realize that it's actually a skunk.")
     time.sleep(0.5)
     print("- 20 hp")
     global hp
