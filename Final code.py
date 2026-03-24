@@ -320,7 +320,7 @@ def gather6():
     global metal
     metal += 5
 
-gather_functions = [gather1, gather2, gather3, gather4, gather 5, gather6]
+gather_functions = [gather1, gather2, gather3, gather4, gather5, gather6]
 
 # procedure where user chooses an action which outputs a random event from the action lists
 def user_action():
