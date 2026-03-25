@@ -508,7 +508,7 @@ else:
 # coded by partner 2
 print("Day 4 begins.")
 print(f"You wake up and see {volleyball} right by your side. You guys have a friendly little chat.")
-print("You tell Sam about what your life was like before you got trapped on this little Island. You remember the tasty food, the beautiful skyscrapers, you even start to miss your boss.")
+print(f"You tell {volleyball} about what your life was like before you got trapped on this little Island. You remember the tasty food, the beautiful skyscrapers, you even start to miss your boss.")
 print("Then it hits you. You need to go back home. Even if you didn't finish the job, the company would still reimburse you and you would get even more than the actual bonus.")
 print("So you make a plan.")
 print("1st: You gather all the wood, twigs, vines, and a rag that washed up on the shore.")
