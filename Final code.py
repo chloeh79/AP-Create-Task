@@ -2,7 +2,7 @@ import random
 import time
 import sys
 
-# ai assisted
+# AI assisted
 # --- TYPEWRITER EFFECT ---
 def typewriter(text="", speed=0.03):
     for char in str(text):
@@ -178,19 +178,19 @@ def craft():
         print()
         print("5. Shield")
         print("Requires 1 wood + 6 metal")
-    answer2 = input("What do you want to craft? (1-5 or name of item) ")
-    if answer2 == "1" or answer2.lower() == "fishing rod":
-        craft_fishing_rod()
-    elif answer2 == "2" or answer2.lower() == "pickaxe":
-        craft_pickaxe()
-    elif answer2 == "3" or answer2.lower() == "sword":
-        craft_sword()
-    elif answer2 == "4" or answer2.lower() == "pot":
-        craft_pot()
-    elif answer2 == "5" or answer2.lower() == "shield":
-        craft_shield()
-    else:
-        print("Invalid choice.")
+        answer2 = input("What do you want to craft? (1-5 or name of item) ")
+        if answer2 == "1" or answer2.lower() == "fishing rod":
+            craft_fishing_rod()
+        elif answer2 == "2" or answer2.lower() == "pickaxe":
+            craft_pickaxe()
+        elif answer2 == "3" or answer2.lower() == "sword":
+            craft_sword()
+        elif answer2 == "4" or answer2.lower() == "pot":
+            craft_pot()
+        elif answer2 == "5" or answer2.lower() == "shield":
+            craft_shield()
+        else:
+            print("Invalid choice.")
 
 
 time.sleep(2)
@@ -323,24 +323,30 @@ def gather6():
 gather_functions = [gather1, gather2, gather3, gather4, gather5, gather6]
 
 # procedure where user chooses an action which outputs a random event from the action lists
-def user_action():
-    action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials "))
-    time.sleep(0.5)
-    if action == 1:
-        print("...")
-        time.sleep(2)
-        random.choice(explore_functions)()
-    if action == 2:
-        print("...")
-        time.sleep(2)
-        random.choice(hunt_functions)()
-    if action == 3:
-        print("...")
-        time.sleep(2)
-        random.choice(gather_functions)()
-        check_inventory()
+def user_action(num):
+    for _ in range(num):
+        print("\n--- Choose Action ---")
+        try:
+            action = int(input("1 - Explore | 2 - Hunt | 3 - Gather Materials: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+        time.sleep(0.5)
+        if action == 1:
+            print("...")
+            time.sleep(2)
+            random.choice(explore_functions)()
+        if action == 2:
+            print("...")
+            time.sleep(2)
+            random.choice(hunt_functions)()
+        if action == 3:
+            print("...")
+            time.sleep(2)
+            random.choice(gather_functions)()
+            check_inventory()
 
-user_action()
+user_action(1)
 print()
 print("- night -")
 time.sleep(0.5)
@@ -419,16 +425,8 @@ print("Day 3")
 print()
 print("You wake up and feel some invisible force telling you to get to work.")
 print("Maybe it's warning you of something to come.")
-
-user_action()
-
-print("It's still early in the morning and you've already done something good.")
-print("You definitely feel like you can do a couple more things before nighttime.")
 print()
-user_action()
-
-print()
-user_action()
+user_action(3)
 
 print()
 
@@ -535,4 +533,3 @@ print("You arrive to the home, ring the doorbell, and wait. A kind old man in a 
 print("He complains about the late delivery and the damaged packaging but you just leave without really caring. You feel a sense of fulfillment.")
 print("You drive into the sunset as the old man opens his package back at his home. He takes out what seems to be a Satellite Messenger. This whole time, rescue could have been a lot easier.")
 print("                                                                               ...The End...")
-
