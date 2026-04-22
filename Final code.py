@@ -197,7 +197,7 @@ time.sleep(2)
 print("You wake up from a pleasant dream about fluffy clouds and unicorns")
 print("...and then you're brought back to reality")
 print()
-print("You realize that you might be here for a while...hopefully not more than 30 days")
+print("You realize that you might be here for a while...hopefully not for long")
 print()
 print("You may pick one action before night:")
 
